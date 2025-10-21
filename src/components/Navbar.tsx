@@ -107,15 +107,18 @@ const Navbar = () => {
                   console.log('Attempted path:', '/lovable-uploads/355f7e8e-eadc-4c20-b8d3-a150790a2885.png');
                 }}
               />
-       <span
+   <span
   className={`font-bold text-lg md:text-xl transition-all duration-300 group-hover:text-nexrank-purple ${
-    scrolled 
-      ? 'text-gray-900 dark:text-white' 
-      : 'text-white dark:text-gray-300'
+    theme === 'halloween'
+      ? 'text-orange-200'
+      : scrolled
+        ? 'text-gray-900 dark:text-white'
+        : 'text-white dark:text-gray-300'
   }`}
 >
   Singularity
 </span>
+
 
 
             </button>

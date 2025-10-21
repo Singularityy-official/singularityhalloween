@@ -189,10 +189,11 @@ const GraphicsPage = () => {
          <div
   className={`glass-card-enhanced p-6 sm:p-8 md:p-12 text-center max-w-4xl mx-auto animate-fade-in scroll-animate ${
     theme === 'halloween'
-      ? 'bg-gradient-to-br from-orange-800/80 via-purple-900/70 to-black/70 text-orange-100'
-      : 'bg-white/80 text-gray-900 dark:bg-gray-900 dark:text-white'
+      ? 'bg-gradient-to-br from-orange-800 via-purple-900 to-black text-orange-100'
+      : 'bg-white text-gray-900 dark:bg-gray-900 dark:text-white'
   }`}
 >
+
 
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 glow-text-subtle">
               Richiedi la Tua Grafica Personalizzata
