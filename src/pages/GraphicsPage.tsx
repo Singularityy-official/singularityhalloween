@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import FeatureCard from '@/components/FeatureCard';
 import SEOHead from '@/components/SEOHead';
+import { useTheme } from '@/contexts/ThemeContext';
 
+const { theme } = useTheme();
 const GraphicsPage = () => {
   useEffect(() => {
     const observerOptions = {
@@ -184,7 +186,14 @@ const GraphicsPage = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-primary/10 rounded-full blur-3xl animate-pulse-slow"></div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="glass-card-enhanced p-6 sm:p-8 md:p-12 text-center max-w-4xl mx-auto animate-fade-in scroll-animate">
+          <div
+  className={`glass-card-enhanced p-6 sm:p-8 md:p-12 text-center max-w-4xl mx-auto animate-fade-in scroll-animate ${
+    theme === 'halloween'
+      ? 'bg-gradient-to-br from-orange-800 via-purple-900 to-black text-orange-100'
+      : 'bg-white text-gray-900 dark:bg-gray-900 dark:text-white'
+  }`}
+>
+
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 glow-text-subtle">
               Richiedi la Tua Grafica Personalizzata
             </h2>
