@@ -5,6 +5,8 @@ import { Menu, X, Home, Palette, Monitor, Video, Heart, Mail, User } from 'lucid
 import { Button } from '@/components/ui/button';
 import { useIsMobile } from '@/hooks/use-mobile';
 import ThemeToggle from './ThemeToggle';
+import { useTheme } from '@/contexts/ThemeContext';
+
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -12,6 +14,8 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const isMobile = useIsMobile();
+  const { theme } = useTheme();
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -79,8 +83,13 @@ const Navbar = () => {
     scrolled 
       ? 'py-2 md:py-3 shadow-2xl border-b border-white/10' 
       : 'py-3 md:py-5'
-  } bg-white/80 dark:bg-[rgba(15,15,19,0.7)]`}
+  } ${
+    theme === 'halloween'
+      ? 'bg-[rgba(30,0,40,0.8)] border-b border-[rgba(255,128,0,0.3)]'
+      : 'bg-white/80 dark:bg-[rgba(15,15,19,0.7)]'
+  }`}
 >
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
