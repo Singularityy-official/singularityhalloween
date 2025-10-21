@@ -180,7 +180,7 @@ const GraphicsPage = () => {
       </section>
 
       <section className="py-12 sm:py-16 md:py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-hero-gradient opacity-20"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-100 to-transparent opacity-60"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-primary/10 rounded-full blur-3xl animate-pulse-slow"></div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

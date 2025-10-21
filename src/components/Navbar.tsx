@@ -11,6 +11,7 @@ import { useTheme } from '@/contexts/ThemeContext';
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+    const [theme, setTheme] = useState('default'); // può essere 'default' o 'halloween'
   const location = useLocation();
   const navigate = useNavigate();
   const isMobile = useIsMobile();
