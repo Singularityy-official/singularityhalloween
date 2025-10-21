@@ -559,7 +559,6 @@
     @apply text-sm;
   }
 }
-
 /* 🎃 Tema Halloween - compatibile con le variabili HSL */
 .halloween {
   --background: 25 20% 6%; /* scuro con tono arancio */
@@ -629,23 +628,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
-/* 👻 Effetti visivi aggiuntivi per il tema Halloween */
-.halloween .floating-particles .particle {
-  background: radial-gradient(circle, rgba(255, 120, 0, 0.8) 0%, transparent 70%);
-}
-
-.halloween .animated-grid {
-  background-image: 
-    linear-gradient(rgba(255, 120, 0, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 120, 0, 0.05) 1px, transparent 1px);
-}
-
-.halloween .noise-texture {
-  opacity: 0.25;
-  mix-blend-mode: overlay;
-}
-
 
 /* Performance Optimizations */
 @media (prefers-reduced-motion: reduce) {
