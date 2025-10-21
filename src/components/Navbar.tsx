@@ -121,8 +121,12 @@ const Navbar = () => {
             </button>
           </div>
 
-          <nav 
-  className="hidden md:flex items-center space-x-2 lg:space-x-4 rounded-full px-4 py-2 bg-white dark:bg-[rgba(255,255,255,0.08)] border dark:border-white/15 backdrop-blur-xl"
+     <nav
+  className={`hidden md:flex items-center space-x-2 lg:space-x-4 rounded-full px-4 py-2 border backdrop-blur-xl transition-all duration-500 ${
+    theme === 'halloween'
+      ? 'bg-[rgba(50,0,60,0.7)] border-[rgba(255,128,0,0.3)]'
+      : 'bg-white dark:bg-[rgba(255,255,255,0.08)] dark:border-white/15 border-white/10'
+  }`}
 >
 
 
