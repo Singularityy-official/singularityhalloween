@@ -559,6 +559,75 @@
     @apply text-sm;
   }
 }
+/* 🎃 Tema Halloween - compatibile con le variabili HSL */
+.halloween {
+  --background: 25 20% 6%; /* scuro con tono arancio */
+  --foreground: 25 100% 90%;
+
+  --card: 25 25% 10%;
+  --card-foreground: 25 100% 85%;
+
+  --popover: 25 20% 8%;
+  --popover-foreground: 25 100% 85%;
+
+  --primary: 32 95% 55%; /* arancione brillante */
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 270 60% 25%; /* viola scuro */
+  --secondary-foreground: 25 100% 90%;
+
+  --muted: 270 30% 20%;
+  --muted-foreground: 25 100% 85%;
+
+  --accent: 35 100% 50%; /* arancione acceso */
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 270 40% 30%;
+  --input: 270 40% 30%;
+  --ring: 35 100% 50%;
+}
+
+.halloween body {
+  background-image: radial-gradient(
+    circle at 50% 10%,
+    rgba(255, 120, 0, 0.15) 0%,
+    rgba(40, 20, 5, 0.4) 40%,
+    transparent 70%
+  );
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  color: hsl(var(--foreground));
+  transition: all 0.4s ease-in-out;
+}
+
+.halloween .glass-card,
+.halloween .glass-card-enhanced {
+  background: rgba(255, 100, 0, 0.05);
+  border-color: rgba(255, 120, 0, 0.2);
+  box-shadow: 0 4px 20px rgba(255, 100, 0, 0.15);
+}
+
+.halloween .primary-button,
+.halloween .primary-button-glow {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  box-shadow: 0 4px 15px rgba(255, 120, 0, 0.3);
+}
+
+.halloween .primary-button:hover,
+.halloween .primary-button-glow:hover {
+  box-shadow: 0 8px 25px rgba(255, 150, 50, 0.5);
+  transform: translateY(-2px);
+}
+
+.halloween .hero-text {
+  background: linear-gradient(90deg, #ff7518 0%, #d14fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 /* Performance Optimizations */
 @media (prefers-reduced-motion: reduce) {
