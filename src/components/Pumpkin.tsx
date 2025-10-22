@@ -13,6 +13,9 @@ const Pumpkin: React.FC<Props> = ({ id, size = 44, style }) => {
   const navigate = useNavigate();
   const secretId = useMemo(() => getOrCreateSecretPumpkinId(), []);
   const isSecret = secretId === id;
+if (isSecret) {
+  console.log("🎃 Questa è la zucca segreta:", id);
+}
 
   const handleClick = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -24,6 +27,9 @@ const Pumpkin: React.FC<Props> = ({ id, size = 44, style }) => {
       setTimeout(() => el.classList.remove("pumpkin-bounce"), 600);
     }
   };
+const glowStyle = isSecret
+  ? { boxShadow: "0 0 20px 5px gold", borderRadius: "50%" }
+  : {};
 
   return (
     <div
@@ -31,13 +37,15 @@ const Pumpkin: React.FC<Props> = ({ id, size = 44, style }) => {
       data-pumpkin-id={id}
       title={isSecret ? "..." : "Decorazione"}
       style={{
-        width: size,
-        height: size,
-        display: "inline-block",
-        cursor: "pointer",
-        margin: 6,
-        ...style, // ⬅️ ora puoi passare posizioni personalizzate
-      }}
+  width: size,
+  height: size,
+  display: "inline-block",
+  cursor: "pointer",
+  margin: 6,
+  ...style,      // posizioni personalizzate
+  ...glowStyle,  // 💡 effetto luminoso se è quella segreta
+}}
+
     >
       <svg viewBox="0 0 64 64" width={size} height={size} xmlns="http://www.w3.org/2000/svg">
         <circle cx="32" cy="34" r="20" fill="#ff8c00" />
