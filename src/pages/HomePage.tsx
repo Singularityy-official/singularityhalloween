@@ -35,10 +35,7 @@ const HomePage = () => {
             </h1>
             
             <p className="subtitle-text mb-8 animate-slide-up" style={{animationDelay: '0.3s'}}>
-              <strong>Grafica personalizzata, assistenza informatica e video editing</strong> di alta qualità 
-              a prezzi accessibili. Trasformiamo le tue idee in realtà digitale con competenza e creatività, 
-              offrendo servizi professionali in tutta Italia con supporto dedicato e soluzioni su misura per 
-              privati e aziende.
+              <strong>Grafica personalizzata, assistenza informatica e video editing</strong>
             </p>
             
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row animate-slide-up" style={{animationDelay: '0.6s'}}>
