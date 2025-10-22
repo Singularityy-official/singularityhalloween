@@ -18,9 +18,21 @@ import WorkWithUsPage from "./pages/WorkWithUsPage";
 import AboutPage from "./pages/AboutPage";
 import SecretPage from "./pages/SecretPage";
 // ...
-<Routes>
-  {/* altre route */}
+
+  <Routes>
+  <Route path="/" element={<HomePage />} />
+  <Route path="/graphics" element={<GraphicsPage />} />
+  <Route path="/it" element={<ITPage />} />
+  <Route path="/video-editing" element={<VideoEditingPage />} />
+  <Route path="/social-commitment" element={<SocialCommitmentPage />} />
+  <Route path="/contact" element={<ContactPage />} />
+  <Route path="/work-with-us" element={<WorkWithUsPage />} />
+  <Route path="/about" element={<AboutPage />} />
+  
+  {/* ✅ La rotta corretta per SecretPage */}
   <Route path="/pagina-segreta" element={<SecretPage />} />
+
+  <Route path="*" element={<NotFound />} />
 </Routes>
 
 

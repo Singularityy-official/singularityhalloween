@@ -115,13 +115,18 @@ La nostra missione è rendere la tecnologia e il design alla portata di tutti, c
   <Pumpkin id="services-pumpkin-2" size={24} style={{ position: "absolute", bottom: "15%", right: "30%" }} />
   <Pumpkin id="services-pumpkin-3" size={36} style={{ position: "absolute", top: "40%", right: "10%" }} />
   {/* 🎃 Questa è la zucca segreta cliccabile */}
-<Pumpkin
-  id="secret-pumpkin"
-  size={42}
-  clickable={true}
-  style={{ position: "absolute", bottom: "5%", left: "50%" }}
-  onClick={() => navigate("/secret")} // ⬅️ qui avviene la navigazione interna
-/>
+<Link 
+  to="/pagina-segreta"  // <-- deve corrispondere al path della route
+  className="absolute"
+  style={{ bottom: "5%", left: "50%" }}
+>
+  <Pumpkin
+    id="secret-pumpkin"
+    size={42}
+    clickable={true}
+  />
+</Link>
+
 
 
 </div>
