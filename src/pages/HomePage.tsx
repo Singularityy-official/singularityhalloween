@@ -6,6 +6,8 @@ import { Button } from '@/components/ui/button';
 import FeatureCard from '@/components/FeatureCard';
 import ImmersiveBackground from '@/components/ImmersiveBackground';
 import SEOHead from '@/components/SEOHead';
+import Pumpkin from "@/components/Pumpkin";
+
 
 const HomePage = () => {
   const scrollToServices = () => {
@@ -27,7 +29,14 @@ const HomePage = () => {
       {/* Hero Section with SEO optimized content */}
       <section className="pt-32 pb-20 relative min-h-screen flex items-center">
         <ImmersiveBackground variant="default" showParticles={true} showNoise={true} />
-        
+        {/* 🎃 Decorazioni Halloween nella Hero */}
+<div className="absolute inset-0 pointer-events-none">
+  <Pumpkin id="hero-pumpkin-1" size={40} style={{ position: "absolute", top: "15%", left: "10%" }} />
+  <Pumpkin id="hero-pumpkin-2" size={50} style={{ position: "absolute", bottom: "10%", right: "15%" }} />
+  <Pumpkin id="hero-pumpkin-3" size={30} style={{ position: "absolute", top: "30%", right: "25%" }} />
+  <Pumpkin id="hero-pumpkin-4" size={34} style={{ position: "absolute", bottom: "25%", left: "35%" }} />
+</div>
+
         <div className="section-container relative z-10">
           <div className="text-center animate-fade-in">
             <h1 className="hero-text mb-6">
@@ -91,6 +100,15 @@ La nostra missione è rendere la tecnologia e il design alla portata di tutti, c
 
       {/* Services Section with internal links */}
       <section id="services-section" className="py-20 relative">
+        {/* 🎃 Zucche decorative tra i servizi */}
+<div className="absolute inset-0 pointer-events-none">
+  <Pumpkin id="services-pumpkin-1" size={28} style={{ position: "absolute", top: "10%", left: "20%" }} />
+  <Pumpkin id="services-pumpkin-2" size={24} style={{ position: "absolute", bottom: "15%", right: "30%" }} />
+  <Pumpkin id="services-pumpkin-3" size={36} style={{ position: "absolute", top: "40%", right: "10%" }} />
+  {/* 🎃 Questa è la zucca segreta cliccabile */}
+  <Pumpkin id="secret-pumpkin" size={42} clickable={true} style={{ position: "absolute", bottom: "5%", left: "50%" }} />
+</div>
+
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-1/4 right-0 w-80 h-80 bg-primary/10 rounded-full blur-3xl animate-pulse opacity-30"></div>
         </div>

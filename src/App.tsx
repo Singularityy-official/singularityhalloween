@@ -16,6 +16,13 @@ import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
 import WorkWithUsPage from "./pages/WorkWithUsPage";
 import AboutPage from "./pages/AboutPage";
+import SecretPage from "./pages/SecretPage";
+// ...
+<Routes>
+  {/* altre route */}
+  <Route path="/pagina-segreta" element={<SecretPage />} />
+</Routes>
+
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
