@@ -47,12 +47,6 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      
-<!-- TrustBox widget - Review Collector -->
-<div class="trustpilot-widget" data-locale="it-IT" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="68762f0f88114dfce8764a82" data-style-height="52px" data-style-width="100%">
-  <a href="https://it.trustpilot.com/review/singularitydream.it" target="_blank" rel="noopener">Trustpilot</a>
-</div>
-<!-- End TrustBox widget -->
 
       {/* Services Section with Enhanced Animations */}
       <section id="services-section" className="py-20 relative">
