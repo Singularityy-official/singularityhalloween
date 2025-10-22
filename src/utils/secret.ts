@@ -6,6 +6,10 @@ const AVAILABLE_PUMPKINS = [
   "hero-pumpkin-3",
   "hero-pumpkin-4",
 ];
+export function forceSecretPumpkinId(forcedId: string) {
+  if (typeof window === "undefined") return;
+  localStorage.setItem(SECRET_KEY, forcedId);
+}
 
 export function getOrCreateSecretPumpkinId() {
   if (typeof window === "undefined") return null;

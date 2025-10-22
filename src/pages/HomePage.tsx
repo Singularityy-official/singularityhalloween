@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ArrowRight, Pen, Monitor, Video, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -7,9 +6,14 @@ import FeatureCard from '@/components/FeatureCard';
 import ImmersiveBackground from '@/components/ImmersiveBackground';
 import SEOHead from '@/components/SEOHead';
 import Pumpkin from "@/components/Pumpkin";
-
+import { forceSecretPumpkinId } from "@/utils/secret";
 
 const HomePage = () => {
+  // ✅ Forza la zucca segreta
+  useEffect(() => {
+    forceSecretPumpkinId("hero-pumpkin-3"); // questa sarà la zucca segreta
+  }, []);
+
   const scrollToServices = () => {
     const servicesSection = document.getElementById('services-section');
     if (servicesSection) {
@@ -29,14 +33,16 @@ const HomePage = () => {
       {/* Hero Section with SEO optimized content */}
       <section className="pt-32 pb-20 relative min-h-screen flex items-center">
         <ImmersiveBackground variant="default" showParticles={true} showNoise={true} />
-        {/* 🎃 Decorazioni Halloween nella Hero */}
-<div className="absolute inset-0 pointer-events-none">
-  <Pumpkin id="hero-pumpkin-1" size={40} style={{ position: "absolute", top: "15%", left: "10%" }} />
-  <Pumpkin id="hero-pumpkin-2" size={50} style={{ position: "absolute", bottom: "10%", right: "15%" }} />
-  <Pumpkin id="hero-pumpkin-3" size={30} style={{ position: "absolute", top: "30%", right: "25%" }} />
-  <Pumpkin id="hero-pumpkin-4" size={34} style={{ position: "absolute", bottom: "25%", left: "35%" }} />
-</div>
 
+        {/* 🎃 Decorazioni Halloween nella Hero */}
+        <div className="absolute inset-0 pointer-events-none">
+          <Pumpkin id="hero-pumpkin-1" size={40} style={{ position: "absolute", top: "15%", left: "10%" }} />
+          <Pumpkin id="hero-pumpkin-2" size={50} style={{ position: "absolute", bottom: "10%", right: "15%" }} />
+          <Pumpkin id="hero-pumpkin-3" size={30} style={{ position: "absolute", top: "30%", right: "25%" }} />
+          <Pumpkin id="hero-pumpkin-4" size={34} style={{ position: "absolute", bottom: "25%", left: "35%" }} />
+        </div>
+
+        {/* Hero Text e CTA */}
         <div className="section-container relative z-10">
           <div className="text-center animate-fade-in">
             <h1 className="hero-text mb-6">
