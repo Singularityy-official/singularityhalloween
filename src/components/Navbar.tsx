@@ -5,8 +5,6 @@ import { Menu, X, Home, Palette, Monitor, Video, Heart, Mail, User } from 'lucid
 import { Button } from '@/components/ui/button';
 import { useIsMobile } from '@/hooks/use-mobile';
 import ThemeToggle from './ThemeToggle';
-import { useTheme } from '@/contexts/ThemeContext';
-
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -14,8 +12,6 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const isMobile = useIsMobile();
-  const { theme } = useTheme();
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -78,18 +74,20 @@ const Navbar = () => {
   };
 
   return (
-   <header 
-  className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 backdrop-blur-xl ${
-    scrolled 
-      ? 'py-2 md:py-3 shadow-2xl border-b border-white/10' 
-      : 'py-3 md:py-5'
-  } ${
-    theme === 'halloween'
-      ? 'bg-[rgba(30,0,40,0.8)] border-b border-[rgba(255,128,0,0.3)]'
-      : 'bg-white/80 dark:bg-[rgba(15,15,19,0.7)]'
-  }`}
->
-
+    <header 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled 
+          ? 'py-2 md:py-3 shadow-2xl' 
+          : 'py-3 md:py-5'
+      }`}
+      style={{
+        background: scrolled 
+          ? 'linear-gradient(180deg, rgba(15,15,19,0.95) 0%, rgba(26,31,44,0.9) 100%)'
+          : 'linear-gradient(180deg, rgba(15,15,19,0.7) 0%, rgba(26,31,44,0.5) 100%)',
+        backdropFilter: 'blur(12px)',
+        borderBottom: scrolled ? '1px solid rgba(255, 255, 255, 0.1)' : 'none'
+      }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
@@ -102,37 +100,21 @@ const Navbar = () => {
                 src="/lovable-uploads/355f7e8e-eadc-4c20-b8d3-a150790a2885.png" 
                 alt="Singularity Logo" 
                 className="h-10 md:h-12 w-auto transition-all duration-300 group-hover:drop-shadow-lg"
-                onError={(e) => {
-                  console.log('Logo load error in Navbar:', e);
-                  console.log('Attempted path:', '/lovable-uploads/355f7e8e-eadc-4c20-b8d3-a150790a2885.png');
-                }}
               />
-   <span
-  className={`font-bold text-lg md:text-xl transition-all duration-300 group-hover:text-nexrank-purple ${
-    theme === 'halloween'
-      ? 'text-orange-200'
-      : scrolled
-        ? 'text-gray-900 dark:text-white'
-        : 'text-white dark:text-gray-300'
-  }`}
->
-  Singularity
-</span>
-
-
-
+              <span className="text-white font-bold text-lg md:text-xl transition-all duration-300 group-hover:text-nexrank-purple">
+                Singularity
+              </span>
             </button>
           </div>
 
-     <nav
-  className={`hidden md:flex items-center space-x-2 lg:space-x-4 rounded-full px-4 py-2 border backdrop-blur-xl transition-all duration-500 ${
-    theme === 'halloween'
-      ? 'bg-[rgba(50,0,60,0.7)] border-[rgba(255,128,0,0.3)]'
-      : 'bg-white dark:bg-[rgba(255,255,255,0.08)] dark:border-white/15 border-white/10'
-  }`}
->
-
-
+          <nav 
+            className="hidden md:flex items-center space-x-2 lg:space-x-4 rounded-full px-4 py-2"
+            style={{
+              background: 'rgba(255, 255, 255, 0.08)',
+              backdropFilter: 'blur(16px)',
+              border: '1px solid rgba(255, 255, 255, 0.12)'
+            }}
+          >
             {navLinks.map(renderNavLink)}
           </nav>
 
@@ -141,7 +123,7 @@ const Navbar = () => {
             <Link to="/about">
               <Button className="primary-button-glow animate-pulse-glow flex items-center gap-2 hover:scale-105 transition-all duration-300">
                 <User size={16} className="transition-transform duration-300 hover:rotate-12" />
-                Chi siamo?
+                Chi sono?
               </Button>
             </Link>
           </div>
@@ -149,22 +131,29 @@ const Navbar = () => {
           <div className="md:hidden flex items-center space-x-2">
             <ThemeToggle />
             <button
-  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-  className="p-2 rounded-lg transition-all duration-300 hover:scale-110 text-black dark:text-white bg-black/10 dark:bg-white/10 backdrop-blur"
-  aria-label={mobileMenuOpen ? "Chiudi menu" : "Apri menu"}
->
-  {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-</button>
-
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="text-white p-2 rounded-lg transition-all duration-300 hover:scale-110"
+              style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(8px)'
+              }}
+              aria-label={mobileMenuOpen ? "Chiudi menu" : "Apri menu"}
+            >
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
           </div>
         </div>
       </div>
 
       {mobileMenuOpen && (
-      <nav 
-  className="md:hidden animate-fade-in bg-white dark:bg-[rgba(15,15,19,0.98)] backdrop-blur-xl border-t border-white/10"
->
-
+        <nav 
+          className="md:hidden animate-fade-in"
+          style={{
+            background: 'rgba(15,15,19,0.98)',
+            backdropFilter: 'blur(20px)',
+            borderTop: '1px solid rgba(255, 255, 255, 0.1)'
+          }}
+        >
           <div className="p-4 space-y-2">
             {navLinks.map((link) => {
               const IconComponent = link.icon;
@@ -193,7 +182,7 @@ const Navbar = () => {
               onClick={() => setMobileMenuOpen(false)}
             >
               <User size={16} />
-              Chi siamo?
+              Chi sono?
             </Link>
           </div>
         </nav>

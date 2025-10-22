@@ -1,10 +1,10 @@
+
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
-type Theme = 'dark' | 'light' | 'halloween';
+type Theme = 'dark' | 'light';
 
 interface ThemeContextType {
   theme: Theme;
-  setTheme: (theme: Theme) => void;
   toggleTheme: () => void;
 }
 
@@ -19,44 +19,27 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>('light'); // 👈 base: light, non halloween
+  const [theme, setTheme] = useState<Theme>('dark');
 
-  // Carica il tema salvato oppure, se è ottobre e nessuno salvato, mostra halloween
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') as Theme | null;
-
+    const savedTheme = localStorage.getItem('theme') as Theme;
     if (savedTheme) {
       setTheme(savedTheme);
-    } else {
-      const month = new Date().getMonth(); // 0 = gennaio, 9 = ottobre
-      if (month === 9) {
-        setTheme('halloween');
-      }
     }
   }, []);
 
   useEffect(() => {
-  const root = document.documentElement;
-  const body = document.body;
-  root.classList.remove('light', 'dark', 'halloween');
-  body.classList.remove('light', 'dark', 'halloween');
-
-  root.classList.add(theme);
-  body.classList.add(theme);
-
-  localStorage.setItem('theme', theme);
-}, [theme]);
+    document.documentElement.classList.remove('light', 'dark');
+    document.documentElement.classList.add(theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
   const toggleTheme = () => {
-    setTheme(prev => {
-      if (prev === 'light') return 'dark';
-      if (prev === 'dark') return 'halloween';
-      return 'light';
-    });
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
   };
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );

@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { Mail, Phone, MapPin, Send, Clock, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -50,7 +51,7 @@ const ContactPage = () => {
 
     try {
       await emailjs.send(
-        'service_gq3q0im',
+        'service_bdtp346',
         'template_054g8xt',
         {
           from_name: formData.name,
@@ -192,11 +193,8 @@ const ContactPage = () => {
                           required
                           value={formData.name}
                           onChange={handleInputChange}
+                          className="bg-nexrank-dark-blue/50 border-white/20 text-white"
                           placeholder="Il tuo nome"
-                          className="
-                            bg-white border border-gray-300 text-gray-900 placeholder-gray-500
-                            dark:bg-nexrank-dark-blue/50 dark:border-white/20 dark:text-white dark:placeholder-gray-400
-                          "
                         />
                       </div>
                       <div>
@@ -210,11 +208,8 @@ const ContactPage = () => {
                           required
                           value={formData.email}
                           onChange={handleInputChange}
+                          className="bg-nexrank-dark-blue/50 border-white/20 text-white"
                           placeholder="la.tua@email.com"
-                          className="
-                            bg-white border border-gray-300 text-gray-900 placeholder-gray-500
-                            dark:bg-nexrank-dark-blue/50 dark:border-white/20 dark:text-white dark:placeholder-gray-400
-                          "
                         />
                       </div>
                     </div>
@@ -229,15 +224,13 @@ const ContactPage = () => {
                         required
                         value={formData.service}
                         onChange={handleInputChange}
-                        className="
-                          w-full bg-white border border-gray-300 text-gray-900 placeholder-gray-500 rounded-md px-3 py-2
-                          dark:bg-nexrank-dark-blue/50 dark:border-white/20 dark:text-white dark:placeholder-gray-400
-                        "
+                        className="w-full bg-nexrank-dark-blue/50 border border-white/20 text-white rounded-md px-3 py-2"
                       >
                         <option value="">Seleziona un servizio</option>
                         <option value="grafica">Servizi di Grafica</option>
                         <option value="informatica">Servizi Informatici</option>
                         <option value="video">Video Editing</option>
+                        <option value="Impegno Sociale">Impegno Sociale</option>
                         <option value="altro">Altro</option>
                       </select>
                     </div>
@@ -253,11 +246,8 @@ const ContactPage = () => {
                         value={formData.message}
                         onChange={handleInputChange}
                         rows={6}
+                        className="bg-nexrank-dark-blue/50 border-white/20 text-white"
                         placeholder="Raccontaci del tuo progetto, obiettivi e tempistiche..."
-                        className="
-                          bg-white border border-gray-300 text-gray-900 placeholder-gray-500
-                          dark:bg-nexrank-dark-blue/50 dark:border-white/20 dark:text-white dark:placeholder-gray-400
-                        "
                       />
                     </div>
 
@@ -276,17 +266,6 @@ const ContactPage = () => {
                       )}
                     </Button>
                   </form>
-                  <p className="text-sm text-gray-400 pt-6 text-center">
-                    📍 <strong>Visita il nostro profilo Google Business</strong><br />
-                    <a
-                      href="https://share.google/z4vbNP75feo8vM9kS"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-nexrank-violet underline hover:text-nexrank-violet/80 transition"
-                    >
-                      Clicca qui per il profilo Google
-                    </a>
-                  </p>
                 </CardContent>
               </Card>
             </div>
@@ -296,4 +275,5 @@ const ContactPage = () => {
     </div>
   );
 };
+
 export default ContactPage;
