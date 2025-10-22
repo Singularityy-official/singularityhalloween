@@ -35,13 +35,17 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     }
   }, []);
 
-  // Aggiorna il documento e salva nel localStorage
   useEffect(() => {
-    const root = document.documentElement;
-    root.classList.remove('light', 'dark', 'halloween');
-    root.classList.add(theme);
-    localStorage.setItem('theme', theme);
-  }, [theme]);
+  const root = document.documentElement;
+  const body = document.body;
+  root.classList.remove('light', 'dark', 'halloween');
+  body.classList.remove('light', 'dark', 'halloween');
+
+  root.classList.add(theme);
+  body.classList.add(theme);
+
+  localStorage.setItem('theme', theme);
+}, [theme]);
 
   const toggleTheme = () => {
     setTheme(prev => {
