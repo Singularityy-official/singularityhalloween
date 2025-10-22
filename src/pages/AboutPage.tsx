@@ -16,7 +16,7 @@ const AboutPage = () => {
             <span 
               className="bg-gradient-to-r from-pink-400 via-purple-400 to-pink-300 bg-clip-text text-transparent"
             >
-              Chi sono?
+              Chi siamo?
             </span>
           </h1>
         </div>
@@ -58,9 +58,18 @@ const AboutPage = () => {
               costruire qualcosa che abbia davvero valore.
             </p>
             
-            <p className="dark:text-gray-300 light:text-gray-800 text-lg">
-              Se sei qui, grazie. Perché anche solo leggere queste parole significa far parte di qualcosa 
-              che va oltre il digitale. Significa credere che fare del bene, oggi, è ancora possibile.
+             <p className="dark:text-gray-300 light:text-gray-800 text-lg">
+              Oggi, però, non sono più solo: accanto a me c’è Luca Montalbetti, 19 anni.
+            </p>
+             <p className="dark:text-gray-300 light:text-gray-800 text-lg">
+              Luca ha sempre avuto un forte legame con la creatività visiva: sin da piccolo si è appassionato alla grafica e al montaggio video, coltivando queste capacità anche attraverso un percorso di studi dedicato. A differenza di molti, per lui il guadagno economico è secondario: ciò che lo spinge davvero è l’impegno sociale e la possibilità di far crescere un progetto che abbia un impatto positivo sulle persone.
+La sua energia, la sua sensibilità e la sua visione arricchiscono Singularity e rendono il nostro percorso ancora più autentico.
+            </p>
+             <p className="dark:text-gray-300 light:text-gray-800 text-lg">
+              Attualmente operiamo in forma di prestazione occasionale, in piena regola con la normativa italiana, e ogni incarico è per noi una nuova opportunità per dare il meglio e costruire qualcosa che abbia davvero valore.
+            </p>
+             <p className="dark:text-gray-300 light:text-gray-800 text-lg">
+              Se sei qui, grazie. Perché anche solo leggere queste parole significa far parte di qualcosa che va oltre il digitale. Significa credere che fare del bene, oggi, è ancora possibile.
             </p>
           </div>
         </div>

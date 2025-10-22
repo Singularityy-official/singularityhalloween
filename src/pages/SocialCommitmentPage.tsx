@@ -2,17 +2,18 @@ import React, { useEffect } from 'react';
 import { Heart, Leaf, Computer, TreePine, HandHeart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { useToast } from '@/hooks/use-toast';
 
 const SocialCommitmentPage = () => {
-  const { toast } = useToast();
 
-  const handleSupportClick = () => {
-    toast({
-      title: "Grazie per voler supportare la nostra missione!",
-      description: "Il link PayPal sarà presto disponibile!",
-    });
-  };
+<a
+  href="https://www.paypal.com/ncp/payment/YGSXBTFJ9KHHU"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <Button className="primary-button-glow text-lg px-8 py-4 mb-16">
+    Sostieni il Nostro Impegno
+  </Button>
+</a>
 
   useEffect(() => {
     const observerOptions = {
@@ -124,9 +125,16 @@ const SocialCommitmentPage = () => {
             </div>
             
             <div className="animate-slide-up" style={{animationDelay: '0.6s'}}>
-              <Button onClick={handleSupportClick} className="primary-button-glow text-lg px-8 py-4 mb-16">
-                Sostieni il Nostro Impegno
-              </Button>
+             <a
+  href="https://www.paypal.com/ncp/payment/YGSXBTFJ9KHHU"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <Button className="primary-button-glow text-lg px-8 py-4 mb-16">
+    Sostieni il Nostro Impegno
+  </Button>
+</a>
+
             </div>
           </div>
         </div>
@@ -237,9 +245,16 @@ const SocialCommitmentPage = () => {
               Il 100% delle donazioni sarà utilizzato esclusivamente per aiutare le persone bisognose e il pianeta, 
               garantendo la massima trasparenza nel loro utilizzo.
             </p>
-            <Button onClick={handleSupportClick} className="primary-button-glow text-lg px-8 py-4">
-              Dona Ora
-            </Button>
+          <a
+  href="https://www.paypal.com/ncp/payment/YGSXBTFJ9KHHU"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <Button className="primary-button-glow text-lg px-8 py-4 mb-16">
+    Sostieni il Nostro Impegno
+  </Button>
+</a>
+
           </div>
         </div>
       </section>
