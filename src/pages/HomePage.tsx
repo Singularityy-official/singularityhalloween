@@ -67,6 +67,7 @@ const HomePage = () => {
                 variant="outline" 
                 className="glass-button text-foreground border-border hover:bg-accent/10 hover:border-accent hover:text-foreground text-lg w-full sm:w-auto magnetic-button"
               >
+
                 Scopri tutti i nostri servizi digitali
               </Button>
             </div>
@@ -112,7 +113,17 @@ La nostra missione è rendere la tecnologia e il design alla portata di tutti, c
   <Pumpkin id="services-pumpkin-2" size={24} style={{ position: "absolute", bottom: "15%", right: "30%" }} />
   <Pumpkin id="services-pumpkin-3" size={36} style={{ position: "absolute", top: "40%", right: "10%" }} />
   {/* 🎃 Questa è la zucca segreta cliccabile */}
-  <Pumpkin id="secret-pumpkin" size={42} clickable={true} style={{ position: "absolute", bottom: "5%", left: "50%" }} />
+ <Pumpkin 
+  id="secret-pumpkin" 
+  size={42} 
+  clickable={true} 
+  style={{ position: "absolute", bottom: "5%", left: "50%" }}
+  onClick={() => {
+    // esempio: naviga a una pagina interna
+    window.location.href = "/secret"; // oppure usa react-router: navigate("/secret")
+  }}
+/>
+
 </div>
 
         <div className="absolute inset-0 overflow-hidden">
