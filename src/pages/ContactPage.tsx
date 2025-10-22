@@ -194,9 +194,12 @@ const ContactPage = () => {
                           onChange={handleInputChange}
                           placeholder="Il tuo nome"
                           className="
-                            bg-white border border-gray-300 text-gray-900 placeholder-gray-500
-                            dark:bg-nexrank-dark-blue/50 dark:border-white/20 dark:text-white dark:placeholder-gray-400
-                          "
+  bg-[rgba(255,255,255,0.05)] border border-white/10 text-white placeholder-gray-400
+  focus:ring-2 focus:ring-orange-500/60 focus:border-orange-400
+  rounded-md transition-all duration-300
+  dark:bg-[rgba(0,0,0,0.3)] dark:border-white/20
+"
+
                         />
                       </div>
                       <div>
@@ -212,9 +215,12 @@ const ContactPage = () => {
                           onChange={handleInputChange}
                           placeholder="la.tua@email.com"
                           className="
-                            bg-white border border-gray-300 text-gray-900 placeholder-gray-500
-                            dark:bg-nexrank-dark-blue/50 dark:border-white/20 dark:text-white dark:placeholder-gray-400
-                          "
+  bg-[rgba(255,255,255,0.05)] border border-white/10 text-white placeholder-gray-400
+  focus:ring-2 focus:ring-orange-500/60 focus:border-orange-400
+  rounded-md transition-all duration-300
+  dark:bg-[rgba(0,0,0,0.3)] dark:border-white/20
+"
+
                         />
                       </div>
                     </div>
@@ -230,9 +236,12 @@ const ContactPage = () => {
                         value={formData.service}
                         onChange={handleInputChange}
                         className="
-                          w-full bg-white border border-gray-300 text-gray-900 placeholder-gray-500 rounded-md px-3 py-2
-                          dark:bg-nexrank-dark-blue/50 dark:border-white/20 dark:text-white dark:placeholder-gray-400
-                        "
+  bg-[rgba(255,255,255,0.05)] border border-white/10 text-white placeholder-gray-400
+  focus:ring-2 focus:ring-orange-500/60 focus:border-orange-400
+  rounded-md transition-all duration-300
+  dark:bg-[rgba(0,0,0,0.3)] dark:border-white/20
+"
+
                       >
                         <option value="">Seleziona un servizio</option>
                         <option value="grafica">Servizi di Grafica</option>
@@ -255,9 +264,12 @@ const ContactPage = () => {
                         rows={6}
                         placeholder="Raccontaci del tuo progetto, obiettivi e tempistiche..."
                         className="
-                          bg-white border border-gray-300 text-gray-900 placeholder-gray-500
-                          dark:bg-nexrank-dark-blue/50 dark:border-white/20 dark:text-white dark:placeholder-gray-400
-                        "
+  bg-[rgba(255,255,255,0.05)] border border-white/10 text-white placeholder-gray-400
+  focus:ring-2 focus:ring-orange-500/60 focus:border-orange-400
+  rounded-md transition-all duration-300
+  dark:bg-[rgba(0,0,0,0.3)] dark:border-white/20
+"
+
                       />
                     </div>
 
