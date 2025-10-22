@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { ArrowRight, Pen, Monitor, Video, ExternalLink } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import FeatureCard from '@/components/FeatureCard';
 import ImmersiveBackground from '@/components/ImmersiveBackground';
@@ -13,6 +13,8 @@ const HomePage = () => {
   useEffect(() => {
     forceSecretPumpkinId("hero-pumpkin-3"); // questa sarà la zucca segreta
   }, []);
+
+  const navigate = useNavigate();
 
   const scrollToServices = () => {
     const servicesSection = document.getElementById('services-section');
@@ -113,16 +115,14 @@ La nostra missione è rendere la tecnologia e il design alla portata di tutti, c
   <Pumpkin id="services-pumpkin-2" size={24} style={{ position: "absolute", bottom: "15%", right: "30%" }} />
   <Pumpkin id="services-pumpkin-3" size={36} style={{ position: "absolute", top: "40%", right: "10%" }} />
   {/* 🎃 Questa è la zucca segreta cliccabile */}
- <Pumpkin 
-  id="secret-pumpkin" 
-  size={42} 
-  clickable={true} 
+<Pumpkin
+  id="secret-pumpkin"
+  size={42}
+  clickable={true}
   style={{ position: "absolute", bottom: "5%", left: "50%" }}
-  onClick={() => {
-    // esempio: naviga a una pagina interna
-    window.location.href = "/secret"; // oppure usa react-router: navigate("/secret")
-  }}
+  onClick={() => navigate("/secret")} // ⬅️ qui avviene la navigazione interna
 />
+
 
 </div>
 
