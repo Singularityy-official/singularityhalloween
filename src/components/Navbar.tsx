@@ -107,13 +107,14 @@ const Navbar = () => {
               />
        <span
   className={`font-bold text-lg md:text-xl transition-all duration-300 group-hover:text-nexrank-purple ${
-    scrolled 
-      ? 'text-gray-900 dark:text-white' 
-      : 'text-white dark:text-gray-300'
+    scrolled
+      ? 'text-white' // colore fisso bianco quando si scrolla
+      : 'text-white dark:text-gray-300' // colore normale quando in alto
   }`}
 >
   Singularity
 </span>
+
 
 
             </button>
