@@ -19,21 +19,6 @@ import AboutPage from "./pages/AboutPage";
 import SecretPage from "./pages/SecretPage";
 // ...
 
-  <Routes>
-  <Route path="/" element={<HomePage />} />
-  <Route path="/graphics" element={<GraphicsPage />} />
-  <Route path="/it" element={<ITPage />} />
-  <Route path="/video-editing" element={<VideoEditingPage />} />
-  <Route path="/social-commitment" element={<SocialCommitmentPage />} />
-  <Route path="/contact" element={<ContactPage />} />
-  <Route path="/work-with-us" element={<WorkWithUsPage />} />
-  <Route path="/about" element={<AboutPage />} />
-  <Route path="/secret" element={<SecretPage />} /> {/* 👈 aggiungi questa */}
-  <Route path="*" element={<NotFound />} />
-</Routes>
-
-
-
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   
@@ -138,6 +123,7 @@ const AppRoutes = () => (
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/work-with-us" element={<WorkWithUsPage />} />
       <Route path="/about" element={<AboutPage />} />
+      <Route path="/secret" element={<SecretPage />} /> {/* 👈 tieni questa riga */}
       <Route path="*" element={<NotFound />} />
     </Routes>
     <Footer />
