@@ -28,9 +28,7 @@ import SecretPage from "./pages/SecretPage";
   <Route path="/contact" element={<ContactPage />} />
   <Route path="/work-with-us" element={<WorkWithUsPage />} />
   <Route path="/about" element={<AboutPage />} />
-  
-  {/* ✅ La rotta corretta per SecretPage */}
-  <Route path="/pagina-segreta" element={<SecretPage />} />
+  <Route path="/secret" element={<SecretPage />} />
 
   <Route path="*" element={<NotFound />} />
 </Routes>
