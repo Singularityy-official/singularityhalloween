@@ -28,10 +28,10 @@ import SecretPage from "./pages/SecretPage";
   <Route path="/contact" element={<ContactPage />} />
   <Route path="/work-with-us" element={<WorkWithUsPage />} />
   <Route path="/about" element={<AboutPage />} />
-  <Route path="/secret" element={<SecretPage />} />
-
+  <Route path="/secret" element={<SecretPage />} /> {/* 👈 aggiungi questa */}
   <Route path="*" element={<NotFound />} />
 </Routes>
+
 
 
 const ScrollToTop = () => {
